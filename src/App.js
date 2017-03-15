@@ -4,10 +4,6 @@ import MyAwesomeReactComponent from './MyAwesomeReactComponent';
 import logo from './logo.svg';
 import './App.css';
 
-function bleble() {
-  console.log("bleble")
-}
-
 class App extends Component {
   render() {
     return (
@@ -18,8 +14,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={bleble}>click here</button>
+        </p>        
           <MuiThemeProvider>
             <MyAwesomeReactComponent />
           </MuiThemeProvider>
