@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyAwesomeReactComponent from './MyAwesomeReactComponent';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,7 +20,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={bleble}>click here</button>
-
+          <MuiThemeProvider>
+            <MyAwesomeReactComponent />
+          </MuiThemeProvider>
       </div>
     );
   }
