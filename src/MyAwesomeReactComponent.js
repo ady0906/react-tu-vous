@@ -8,7 +8,12 @@ function bleble() {
 };
 
 const MyAwesomeReactComponent = () => (
+<section>
+  <h4>Are you an adult ? </h4>
   <RaisedButton label="Yes" onClick={bleble} />
+  &nbsp;
+  <RaisedButton label="No" onClick={bleble} />
+</section>
 );
 
 export default MyAwesomeReactComponent;
