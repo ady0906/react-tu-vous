@@ -16,9 +16,18 @@ class App extends Component {
 
       let tree = {
         question: "Are you an adult ?",
+        childOptions: [
+          "Yes",
+          "No"
+        ],
         childNodes: [
           {
             question: "Are you speaking to a child ?",
+            parentOption: "Yes",
+            childOptions: [
+              "Yes",
+              "No"
+            ],
             childNodes: [
               {
                 question: "Is the child like a prince or something ?",
@@ -30,7 +39,15 @@ class App extends Component {
                   }
                 ]
               }, {
-                question: "You are speaking to ..."
+                question: "You are speaking to ...",
+                childOptions: [
+                  "A friend or lover",
+                  "Someone you don't formally know",
+                  "Your spouse",
+                  "Your father-in-law",
+                  "Your boss",
+                  "Your teacher"
+                ]
               }
             ]
           }, {
