@@ -16,6 +16,7 @@ class App extends Component {
 
       let tree = {
         question: "Are you an adult ?",
+        questionid: 1,
         childOptions: [
           "Yes",
           "No"
@@ -47,6 +48,18 @@ class App extends Component {
                   "Your father-in-law",
                   "Your boss",
                   "Your teacher"
+                ],
+                childNodes: [
+                  {
+                    answer: "Tu",
+                    parentOption: "A friend or lover"
+                  }, {
+                    question: "God ?",
+                    parentOption: "Someone you don't formally know",
+                    childOptions: [
+                      "Yes", "No"
+                    ]
+                  }
                 ]
               }
             ]
