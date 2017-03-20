@@ -16,7 +16,7 @@ class App extends Component {
 
       let tree = {
         question: "Are you an adult ?",
-        questionid: 1,
+        nodeid: 1,
         childOptions: [
           "Yes",
           "No"
@@ -24,6 +24,7 @@ class App extends Component {
         childNodes: [
           {
             question: "Are you speaking to a child ?",
+            nodeid: 2,
             parentOption: "Yes",
             childOptions: [
               "Yes",
@@ -32,6 +33,7 @@ class App extends Component {
             childNodes: [
               {
                 question: "Is the child a prince or something ?",
+                nodeid: 3,
                 childNodes: [
                   {
                     answer: "Tu"
@@ -41,6 +43,7 @@ class App extends Component {
                 ]
               }, {
                 question: "You are speaking to ...",
+                nodeid: 4,
                 childOptions: [
                   "A friend or lover",
                   "Someone you don't formally know",
@@ -52,9 +55,11 @@ class App extends Component {
                 childNodes: [
                   {
                     answer: "Tu",
+                    nodeid: 5,
                     parentOption: "A friend or lover"
                   }, {
                     question: "God ?",
+                    nodeid: 6,
                     parentOption: "Someone you don't formally know",
                     childOptions: [
                       "Yes", "No"
@@ -62,13 +67,34 @@ class App extends Component {
                     childNodes: [
                       {
                         answer: "Tu (believe it or not)",
+                        nodeid: 7,
                         parentOption: "Yes"
                       },
                       {
-                        question: "Is this someone considerably older (say, a half generation or more) than you ?"
+                        question: "Is this someone considerably older (say, a half generation or more) than you ?",
+                        nodeid: 8,
                         childOptions: [
                           "Yes", "No"
                         ]
+                      }
+                    ]
+                  }, {
+                    question: "Are you and your spouse aristocrats ?",
+                    nodeid: 9,
+                    parentOption: "Your spouse",
+                    childOptions: [
+                      "Yes", "No"
+                    ],
+                    childNodes: [
+                      {
+                        answer: "Tu",
+                        nodeid: 10,
+                        parentOption: "No"
+                      },
+                      {
+                        answer: "Vous",
+                        nodeid: 11,
+                        parentOption: "Yes"
                       }
                     ]
                   }
@@ -77,12 +103,14 @@ class App extends Component {
             ]
           }, {
             question: "Are you speaking to an adult ?",
+            nodeid: 12,
             childOptions: [
               "Yes", "No"
             ]
             childNodes: [
               {
                 question: "Is the adult a family member ?",
+                nodeid: 13,
                 parentOption: "Yes",
                 childOptions: [
                   "Yes", "No"
@@ -90,9 +118,11 @@ class App extends Component {
                 childNodes: [
                   {
                     answer: "Tu",
+                    nodeid: 14,
                     parentOption: "Yes"
                   }, {
                     answer: "Vous",
+                    nodeid: 15,
                     parentOption: "No"
                   }
                 ]
