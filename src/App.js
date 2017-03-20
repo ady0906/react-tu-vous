@@ -31,7 +31,7 @@ class App extends Component {
             ],
             childNodes: [
               {
-                question: "Is the child like a prince or something ?",
+                question: "Is the child a prince or something ?",
                 childNodes: [
                   {
                     answer: "Tu"
@@ -58,6 +58,18 @@ class App extends Component {
                     parentOption: "Someone you don't formally know",
                     childOptions: [
                       "Yes", "No"
+                    ],
+                    childNodes: [
+                      {
+                        answer: "Tu (believe it or not)",
+                        parentOption: "Yes"
+                      },
+                      {
+                        question: "Is this someone considerably older (say, a half generation or more) than you ?"
+                        childOptions: [
+                          "Yes", "No"
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -65,14 +77,23 @@ class App extends Component {
             ]
           }, {
             question: "Are you speaking to an adult ?",
+            childOptions: [
+              "Yes", "No"
+            ]
             childNodes: [
               {
                 question: "Is the adult a family member ?",
+                parentOption: "Yes",
+                childOptions: [
+                  "Yes", "No"
+                ]
                 childNodes: [
                   {
-                    answer: "Tu"
+                    answer: "Tu",
+                    parentOption: "Yes"
                   }, {
-                    answer: "Vous"
+                    answer: "Vous",
+                    parentOption: "No"
                   }
                 ]
               }
