@@ -8,11 +8,15 @@ import './App.css';
 
 class App extends Component {
 
+// how to save state to let app know what question one is on
+
   constructor(props) {
     super(props);
       this.state = {
 
       }
+
+  // decision tree object to go down as questionaire being answered
 
       let tree = {
         question: "Are you an adult ?",
