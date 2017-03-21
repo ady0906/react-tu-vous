@@ -101,7 +101,29 @@ class App extends Component {
                         parentOption: "Yes"
                       }
                     ]
-                  }
+                  },
+                  {
+                  answer: "Best to ask",
+                  parentOption: "Your father-in-law",
+                  nodeid: 16
+                }, {
+                  question: "Is your company laid back ?",
+                  childOptions : ["Yes", "No"],
+                  parentOption: "Your boss",
+                  nodeid: 17
+                  childNodes: [
+                    {
+                      answer: "Tu",
+                      parentOption: "Yes",
+                      nodeid: 18
+                    }, {
+                      question: "Usually a 'vous' situation ... Unless it's a showdown"
+                    }
+                  ]
+                }, {
+
+                }
+
                 ]
               }
             ]
