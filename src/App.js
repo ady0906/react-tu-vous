@@ -77,8 +77,11 @@ class App extends Component {
                       {
                         question: "Is this someone considerably older (say, a half generation or more) than you ?",
                         nodeid: 8,
-                        childOptions: [
-                          "Yes", "No"
+                        childOptions: ["Yes", "No"],
+                        childNodes: [
+                          {
+                            question: ""
+                          }
                         ]
                       }
                     ]
@@ -135,9 +138,23 @@ class App extends Component {
                     }
                   ]
                 }, {
-                  
+                  question: "Is your teacher young enough to be your daughter or son ?",
+                  parentOption: "Your teacher",
+                  childOptions: ["Yes", "No"],
+                  nodeid: 22,
+                  childNodes: [
+                    {
+                      answer: "Tu",
+                      parentOption: "Yes",
+                      nodeid: 23
+                    },
+                    {
+                      answer: "Vous",
+                      parentOption: "No",
+                      nodeid: 24
+                    }
+                  ]
                 }
-
                 ]
               }
             ]
