@@ -105,7 +105,25 @@ class App extends Component {
                                     childOptions: ["Yes", "No", "Not sure"],
                                     childNodes: [
                                       {
-                                        
+                                        answer: "Tu",
+                                        nodeid: 30,
+                                        parentOption: "Yes"
+                                      },
+                                      {
+                                        answer: "Vous",
+                                        nodeid: 31,
+                                        parentOption: "No"
+                                      },
+                                      {
+                                        question: "Do you feel lucky",
+                                        nodeid: 32,
+                                        parentOption: "Not sure",
+                                        childOptions: ["Yes", "No"],
+                                        childNodes: [
+                                          {
+                                            
+                                          }
+                                        ]
                                       }
                                     ]
                                   }
