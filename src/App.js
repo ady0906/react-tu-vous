@@ -30,10 +30,7 @@ class App extends Component {
             question: "Are you speaking to a child ?",
             nodeid: 2,
             parentOption: "Yes",
-            childOptions: [
-              "Yes",
-              "No"
-            ],
+            childOptions: ["Yes", "No"],
             childNodes: [
               {
                 question: "Is the child a prince or something ?",
@@ -77,10 +74,44 @@ class App extends Component {
                       {
                         question: "Is this someone considerably older (say, a half generation or more) than you ?",
                         nodeid: 8,
+                        parentOption: "No",
                         childOptions: ["Yes", "No"],
                         childNodes: [
                           {
-                            question: ""
+                            answer: "Vous",
+                            parentOption: "Yes",
+                            nodeid: 25
+                          }, {
+                            question: "Did you participate in the French 'Mai 68' riots demanding government reform and free love ?",
+                            nodeid: 26,
+                            parentOption: "No",
+                            childOptions: ["Yes", "No"],
+                            childNodes: [
+                              {
+                                question: "Come on, really ?",
+                                nodeid: 27,
+                                parentOption: "Yes",
+                                childOptions: ["Swear to god", "Ok, maybe not"],
+                                childNodes: [
+                                  {
+                                    answer: "Tu",
+                                    nodeid: 28,
+                                    parentOption: "Swear to god"
+                                  },
+                                  {
+                                    question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
+                                    nodeid: 29,
+                                    parentOption: "Ok, maybe not",
+                                    childOptions: ["Yes", "No", "Not sure"],
+                                    childNodes: [
+                                      {
+                                        
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         ]
                       }
@@ -161,9 +192,7 @@ class App extends Component {
           }, {
             question: "Are you speaking to an adult ?",
             nodeid: 12,
-            childOptions: [
-              "Yes", "No"
-            ]
+            childOptions: ["Yes", "No"]
             childNodes: [
               {
                 question: "Is the adult a family member ?",
