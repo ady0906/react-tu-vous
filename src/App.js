@@ -115,13 +115,20 @@ class App extends Component {
                                         parentOption: "No"
                                       },
                                       {
-                                        question: "Do you feel lucky",
+                                        question: "Do you feel lucky ?",
                                         nodeid: 32,
                                         parentOption: "Not sure",
                                         childOptions: ["Yes", "No"],
                                         childNodes: [
                                           {
-                                            
+                                            answer: "Tu",
+                                            nodeid: 33,
+                                            parentOption: "Yes"
+                                          },
+                                          {
+                                            answer: "Vous",
+                                            nodeid: 34,
+                                            parentOption: "No"
                                           }
                                         ]
                                       }
