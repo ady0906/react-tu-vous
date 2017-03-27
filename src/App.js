@@ -169,7 +169,7 @@ class App extends Component {
                   question: "Is your company laid back ?",
                   childOptions : ["Yes", "No"],
                   parentOption: "Your boss",
-                  nodeid: 17
+                  nodeid: 17,
                   childNodes: [
                     {
                       answer: "Tu",
@@ -217,15 +217,13 @@ class App extends Component {
           }, {
             question: "Are you speaking to an adult ?",
             nodeid: 12,
-            childOptions: ["Yes", "No"]
+            childOptions: ["Yes", "No"],
             childNodes: [
               {
                 question: "Is the adult a family member ?",
                 nodeid: 13,
                 parentOption: "Yes",
-                childOptions: [
-                  "Yes", "No"
-                ]
+                childOptions: ["Yes", "No"],
                 childNodes: [
                   {
                     answer: "Tu",
