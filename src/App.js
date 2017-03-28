@@ -13,14 +13,21 @@ class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
-
+        nodeId: 1
       }
+    }
 
-  // decision tree object to go down as questionaire being answered
+// update App state upon onClick event trigger
+
+    changeNode = (currNodeId, optionPick) => {
+
+    }
+
+// decision tree object to go down as questionaire being answered
 
       let tree = {
         question: "Are you an adult ?",
-        nodeid: 1,
+        nodeId: 1,
         childOptions: [
           "Yes",
           "No"
@@ -28,13 +35,13 @@ class App extends Component {
         childNodes: [
           {
             question: "Are you speaking to a child ?",
-            nodeid: 2,
+            nodeId: 2,
             parentOption: "Yes",
             childOptions: ["Yes", "No"],
             childNodes: [
               {
                 question: "Is the child a prince or something ?",
-                nodeid: 3,
+                nodeId: 3,
                 childNodes: [
                   {
                     answer: "Tu"
@@ -44,7 +51,7 @@ class App extends Component {
                 ]
               }, {
                 question: "You are speaking to ...",
-                nodeid: 4,
+                nodeId: 4,
                 childOptions: [
                   "A friend or lover",
                   "Someone you don't formally know",
@@ -56,11 +63,11 @@ class App extends Component {
                 childNodes: [
                   {
                     answer: "Tu",
-                    nodeid: 5,
+                    nodeId: 5,
                     parentOption: "A friend or lover"
                   }, {
                     question: "God ?",
-                    nodeid: 6,
+                    nodeId: 6,
                     parentOption: "Someone you don't formally know",
                     childOptions: [
                       "Yes", "No"
@@ -68,66 +75,66 @@ class App extends Component {
                     childNodes: [
                       {
                         answer: "Tu (believe it or not)",
-                        nodeid: 7,
+                        nodeId: 7,
                         parentOption: "Yes"
                       },
                       {
                         question: "Is this someone considerably older (say, a half generation or more) than you ?",
-                        nodeid: 8,
+                        nodeId: 8,
                         parentOption: "No",
                         childOptions: ["Yes", "No"],
                         childNodes: [
                           {
                             answer: "Vous",
                             parentOption: "Yes",
-                            nodeid: 25
+                            nodeId: 25
                           }, {
                             question: "Did you participate in the French 'Mai 68' riots demanding government reform and free love ?",
-                            nodeid: 26,
+                            nodeId: 26,
                             parentOption: "No",
                             childOptions: ["Yes", "No"],
                             childNodes: [
                               {
                                 question: "Come on, really ?",
-                                nodeid: 27,
+                                nodeId: 27,
                                 parentOption: "Yes",
                                 childOptions: ["Swear to god", "Ok, maybe not"],
                                 childNodes: [
                                   {
                                     answer: "Tu",
-                                    nodeid: 28,
+                                    nodeId: 28,
                                     parentOption: "Swear to god"
                                   },
                                   {
                                     question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
-                                    nodeid: 29,
+                                    nodeId: 29,
                                     parentOption: "Ok, maybe not",
                                     childOptions: ["Yes", "No", "Not sure"],
                                     childNodes: [
                                       {
                                         answer: "Tu",
-                                        nodeid: 30,
+                                        nodeId: 30,
                                         parentOption: "Yes"
                                       },
                                       {
                                         answer: "Vous",
-                                        nodeid: 31,
+                                        nodeId: 31,
                                         parentOption: "No"
                                       },
                                       {
                                         question: "Do you feel lucky ?",
-                                        nodeid: 32,
+                                        nodeId: 32,
                                         parentOption: "Not sure",
                                         childOptions: ["Yes", "No"],
                                         childNodes: [
                                           {
                                             answer: "Tu",
-                                            nodeid: 33,
+                                            nodeId: 33,
                                             parentOption: "Yes"
                                           },
                                           {
                                             answer: "Vous",
-                                            nodeid: 34,
+                                            nodeId: 34,
                                             parentOption: "No"
                                           }
                                         ]
@@ -143,7 +150,7 @@ class App extends Component {
                     ]
                   }, {
                     question: "Are you and your spouse aristocrats ?",
-                    nodeid: 9,
+                    nodeId: 9,
                     parentOption: "Your spouse",
                     childOptions: [
                       "Yes", "No"
@@ -151,12 +158,12 @@ class App extends Component {
                     childNodes: [
                       {
                         answer: "Tu",
-                        nodeid: 10,
+                        nodeId: 10,
                         parentOption: "No"
                       },
                       {
                         answer: "Vous",
-                        nodeid: 11,
+                        nodeId: 11,
                         parentOption: "Yes"
                       }
                     ]
@@ -164,31 +171,31 @@ class App extends Component {
                   {
                   answer: "Best to ask",
                   parentOption: "Your father-in-law",
-                  nodeid: 16
+                  nodeId: 16
                 }, {
                   question: "Is your company laid back ?",
                   childOptions : ["Yes", "No"],
                   parentOption: "Your boss",
-                  nodeid: 17,
+                  nodeId: 17,
                   childNodes: [
                     {
                       answer: "Tu",
                       parentOption: "Yes",
-                      nodeid: 18
+                      nodeId: 18
                     }, {
                       question: "Usually a 'vous' situation ... Unless this is a showdown",
                       parentOption: "No",
-                      nodeid: 19,
+                      nodeId: 19,
                       childOptions: ["Yes", "No"],
                       childNodes: [
                         {
                           answer: "Tu",
                           parentOption: "Yes",
-                          nodeid: 20
+                          nodeId: 20
                         }, {
                           answer: "Vous",
                           parentOption: "No",
-                          nodeid: 21
+                          nodeId: 21
                         }
                       ]
                     }
@@ -197,17 +204,17 @@ class App extends Component {
                   question: "Is your teacher young enough to be your daughter or son ?",
                   parentOption: "Your teacher",
                   childOptions: ["Yes", "No"],
-                  nodeid: 22,
+                  nodeId: 22,
                   childNodes: [
                     {
                       answer: "Tu",
                       parentOption: "Yes",
-                      nodeid: 23
+                      nodeId: 23
                     },
                     {
                       answer: "Vous",
                       parentOption: "No",
-                      nodeid: 24
+                      nodeId: 24
                     }
                   ]
                 }
@@ -216,22 +223,22 @@ class App extends Component {
             ]
           }, {
             question: "Are you speaking to an adult ?",
-            nodeid: 12,
+            nodeId: 12,
             childOptions: ["Yes", "No"],
             childNodes: [
               {
                 question: "Is the adult a family member ?",
-                nodeid: 13,
+                nodeId: 13,
                 parentOption: "Yes",
                 childOptions: ["Yes", "No"],
                 childNodes: [
                   {
                     answer: "Tu",
-                    nodeid: 14,
+                    nodeId: 14,
                     parentOption: "Yes"
                   }, {
                     answer: "Vous",
-                    nodeid: 15,
+                    nodeId: 15,
                     parentOption: "No"
                   }
                 ]
@@ -240,10 +247,14 @@ class App extends Component {
           }
         ]
       }
-
     }
 
     render() {
+
+// if node has child options, render them as clickable buttons
+
+      let
+
       return (
         <div className="App">
           <div className="App-header">
@@ -259,6 +270,6 @@ class App extends Component {
         </div>
       );
     }
-  }
+
 
 export default App;
