@@ -34,12 +34,13 @@ class App extends Component {
     render() {
 
 // if node has child options, render them as clickable buttons
+  // go back to Materialui when functionality has been implemented
 
       let optionButtons;
 
       if (this.props.node.childOptions != null) {
         optionButtons = this.props.node.childOptions.map(function (node, index) {
-          
+
         })
       }
 
