@@ -69,223 +69,205 @@ class App extends Component {
 
   // decision tree object to go down as questionaire being answered
 
-        let tree = {
-          question: "Are you an adult ?",
-          nodeId: 1,
+let tree = {
+  question: "Are you an adult ?",
+  nodeId: 1,
+  childOptions: ["Yes", "No"],
+  childNodes: {
+    "Yes": {
+      question: "Are you speaking to a child ?",
+      nodeId: 2,
+      childOptions: ["Yes", "No"],
+      childNodes: {
+        "Yes": {
+          question: "Is the child a prince or something ?",
+          nodeId: 3,
+          childNodes: {
+            "No": {
+              answer: "Tu"
+              },
+            "Yes": {
+              answer: "Vous"
+              }
+            }
+          },
+    "No": {
+      question: "You are speaking to ...",
+      nodeId: 4,
+      childOptions: [
+        "A friend or lover",
+        "Someone you don't formally know",
+        "Your spouse",
+        "Your father-in-law",
+        "Your boss",
+        "Your teacher"
+      ],
+      childNodes: {
+        "A friend or lover": {
+          answer: "Tu",
+          nodeId: 5,
+        },
+        "Someone you don't formally know": {
+          question: "God ?",
+          nodeId: 6,
+          childOptions: ["Yes", "No"],
+            childNodes: {
+              "Yes": {
+                answer: "Tu (believe it or not)",
+                nodeId: 7
+              },
+              "No": {
+                question: "Is this someone considerably older (say, a half generation or more) than you ?",
+                nodeId: 8,
+                childOptions: ["Yes", "No"],
+                childNodes: {
+                  "Yes: "{
+                    answer: "Vous",
+                    nodeId: 25
+                  },
+                  "No": {
+                    question: "Did you participate in the French 'Mai 68' riots demanding government reform and free love ?",
+                    nodeId: 26,
+                    childOptions: ["Yes", "No"],
+                    childNodes: {
+                      "Yes": {
+                        question: "Come on, really ?",
+                        nodeId: 27,
+                        childOptions: ["Swear to god"],
+                        childNodes: {
+                          "Swear to God": {
+                            answer: "Tu",
+                            nodeId: 28,
+                          }
+                        }
+                      }
+                      "No": {
+                        question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
+                        nodeId: 29,
+                        childOptions: ["Yes", "No", "Not sure"],
+                        childNodes: {
+                          "Yes": {
+                            answer: "Tu",
+                            nodeId: 30
+                          },
+                          "No": {
+                            answer: "Vous",
+                            nodeId: 31
+                          },
+                          "Not sure": {
+                            question: "Do you feel lucky ?",
+                            nodeId: 32,
+                            childOptions: ["Yes", "No"],
+                            childNodes: {
+                              "Yes": {
+                                answer: "Tu",
+                                nodeId: 33
+                              },
+                              "No": {
+                                answer: "Vous",
+                                nodeId: 34
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Your spouse": {
+          question: "Are you and your spouse aristocrats ?",
+          nodeId: 9,
           childOptions: ["Yes", "No"],
           childNodes: {
+            "No": {
+              answer: "Tu",
+              nodeId: 10
+            },
             "Yes": {
-              question: "Are you speaking to a child ?",
-              nodeId: 2,              
+              answer: "Vous",
+              nodeId: 11
+            }
+          }
+        },
+        "Your father-in-law": {
+          answer: "Best to ask",
+          nodeId: 16
+        },
+        "Your boss": {
+          question: "Is your company laid back ?",
+          childOptions : ["Yes", "No"],
+          nodeId: 17,
+          childNodes: {
+            "Yes": {
+              answer: "Tu",
+              nodeId: 18
+            },
+            "No": {
+              question: "Usually a 'vous' situation ... Unless this is a showdown",
+              nodeId: 19,
               childOptions: ["Yes", "No"],
-              childNodes: [
-                {
-                  question: "Is the child a prince or something ?",
-                  nodeId: 3,
-                  childNodes: [
-                    {
-                      answer: "Tu"
-                    }, {
-                      answer: "Vous"
-                    }
-                  ]
-                }, {
-                  question: "You are speaking to ...",
-                  nodeId: 4,
-                  childOptions: [
-                    "A friend or lover",
-                    "Someone you don't formally know",
-                    "Your spouse",
-                    "Your father-in-law",
-                    "Your boss",
-                    "Your teacher"
-                  ],
-                  childNodes: [
-                    {
-                      answer: "Tu",
-                      nodeId: 5,
-                      parentOption: "A friend or lover"
-                    }, {
-                      question: "God ?",
-                      nodeId: 6,
-                      parentOption: "Someone you don't formally know",
-                      childOptions: [
-                        "Yes", "No"
-                      ],
-                      childNodes: [
-                        {
-                          answer: "Tu (believe it or not)",
-                          nodeId: 7,
-                          parentOption: "Yes"
-                        },
-                        {
-                          question: "Is this someone considerably older (say, a half generation or more) than you ?",
-                          nodeId: 8,
-                          parentOption: "No",
-                          childOptions: ["Yes", "No"],
-                          childNodes: [
-                            {
-                              answer: "Vous",
-                              parentOption: "Yes",
-                              nodeId: 25
-                            }, {
-                              question: "Did you participate in the French 'Mai 68' riots demanding government reform and free love ?",
-                              nodeId: 26,
-                              parentOption: "No",
-                              childOptions: ["Yes", "No"],
-                              childNodes: [
-                                {
-                                  question: "Come on, really ?",
-                                  nodeId: 27,
-                                  parentOption: "Yes",
-                                  childOptions: ["Swear to god", "Ok, maybe not"],
-                                  childNodes: [
-                                    {
-                                      answer: "Tu",
-                                      nodeId: 28,
-                                      parentOption: "Swear to god"
-                                    },
-                                    {
-                                      question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
-                                      nodeId: 29,
-                                      parentOption: "Ok, maybe not",
-                                      childOptions: ["Yes", "No", "Not sure"],
-                                      childNodes: [
-                                        {
-                                          answer: "Tu",
-                                          nodeId: 30,
-                                          parentOption: "Yes"
-                                        },
-                                        {
-                                          answer: "Vous",
-                                          nodeId: 31,
-                                          parentOption: "No"
-                                        },
-                                        {
-                                          question: "Do you feel lucky ?",
-                                          nodeId: 32,
-                                          parentOption: "Not sure",
-                                          childOptions: ["Yes", "No"],
-                                          childNodes: [
-                                            {
-                                              answer: "Tu",
-                                              nodeId: 33,
-                                              parentOption: "Yes"
-                                            },
-                                            {
-                                              answer: "Vous",
-                                              nodeId: 34,
-                                              parentOption: "No"
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }, {
-                      question: "Are you and your spouse aristocrats ?",
-                      nodeId: 9,
-                      parentOption: "Your spouse",
-                      childOptions: [
-                        "Yes", "No"
-                      ],
-                      childNodes: [
-                        {
-                          answer: "Tu",
-                          nodeId: 10,
-                          parentOption: "No"
-                        },
-                        {
-                          answer: "Vous",
-                          nodeId: 11,
-                          parentOption: "Yes"
-                        }
-                      ]
-                    },
-                    {
-                    answer: "Best to ask",
-                    parentOption: "Your father-in-law",
-                    nodeId: 16
-                  }, {
-                    question: "Is your company laid back ?",
-                    childOptions : ["Yes", "No"],
-                    parentOption: "Your boss",
-                    nodeId: 17,
-                    childNodes: [
-                      {
-                        answer: "Tu",
-                        parentOption: "Yes",
-                        nodeId: 18
-                      }, {
-                        question: "Usually a 'vous' situation ... Unless this is a showdown",
-                        parentOption: "No",
-                        nodeId: 19,
-                        childOptions: ["Yes", "No"],
-                        childNodes: [
-                          {
-                            answer: "Tu",
-                            parentOption: "Yes",
-                            nodeId: 20
-                          }, {
-                            answer: "Vous",
-                            parentOption: "No",
-                            nodeId: 21
-                          }
-                        ]
-                      }
-                    ]
-                  }, {
-                    question: "Is your teacher young enough to be your daughter or son ?",
-                    parentOption: "Your teacher",
-                    childOptions: ["Yes", "No"],
-                    nodeId: 22,
-                    childNodes: [
-                      {
-                        answer: "Tu",
-                        parentOption: "Yes",
-                        nodeId: 23
-                      },
-                      {
-                        answer: "Vous",
-                        parentOption: "No",
-                        nodeId: 24
-                      }
-                    ]
-                  }
-                  ]
+              childNodes: {
+                "Yes": {
+                  answer: "Tu",
+                  nodeId: 20
+                },
+                "No": {
+                  answer: "Vous",
+                  nodeId: 21
                 }
-              ]
-            }, {
-              question: "Are you speaking to an adult ?",
-              nodeId: 12,
-              childOptions: ["Yes", "No"],
-              childNodes: [
-                {
-                  question: "Is the adult a family member ?",
-                  nodeId: 13,
-                  parentOption: "Yes",
-                  childOptions: ["Yes", "No"],
-                  childNodes: [
-                    {
-                      answer: "Tu",
-                      nodeId: 14,
-                      parentOption: "Yes"
-                    }, {
-                      answer: "Vous",
-                      nodeId: 15,
-                      parentOption: "No"
-                    }
-                  ]
-                }
-              ]
+              }
+            }
+          }
+        },
+        "Your teacher": {
+          question: "Is your teacher young enough to be your daughter or son ?",
+          childOptions: ["Yes", "No"],
+          nodeId: 22,
+          childNodes: {
+            "Yes": {
+              answer: "Tu",
+              nodeId: 23
+            },
+            "No": {
+              answer: "Vous",
+              nodeId: 24
             }
           }
         }
+      }
+    }
+  }
+  },
+  "No": {
+    question: "Are you speaking to an adult ?",
+    nodeId: 12,
+    childOptions: ["Yes", "No"],
+    childNodes: {
+      "Yes": {
+        question: "Is the adult a family member ?",
+        nodeId: 13,
+        childOptions: ["Yes", "No"],
+        childNodes: {
+          "Yes": {
+            answer: "Tu",
+            nodeId: 14
+          },
+          "No": {
+            answer: "Vous",
+            nodeId: 15
+          }
+        }
+      },
+      "No": {
+        answer: "Tu"
+      }
+    }
+  }
+}
+
 
 export default App;
