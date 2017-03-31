@@ -16,7 +16,8 @@ class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        nodeId: 1
+        nodeId: 1,
+        visible: true
       }
     }
 
@@ -40,8 +41,8 @@ class App extends Component {
 
       if (this.props.node.childOptions != null) {
         optionButtons = this.props.node.childOptions.map(function (node, index) {
-
-        })
+          return <button><App node={node}/></button>
+        });
       }
 
       return (
@@ -71,15 +72,11 @@ class App extends Component {
         let tree = {
           question: "Are you an adult ?",
           nodeId: 1,
-          childOptions: [
-            "Yes",
-            "No"
-          ],
-          childNodes: [
-            {
+          childOptions: ["Yes", "No"],
+          childNodes: {
+            "Yes": {
               question: "Are you speaking to a child ?",
-              nodeId: 2,
-              parentOption: "Yes",
+              nodeId: 2,              
               childOptions: ["Yes", "No"],
               childNodes: [
                 {
@@ -288,7 +285,7 @@ class App extends Component {
                 }
               ]
             }
-          ]
+          }
         }
 
 export default App;
