@@ -54,6 +54,16 @@ class App extends Component {
         return list;
       }
 
+    this.getChildren = (parentId) => {
+      if (!(parentID in this.childNodes)) {
+        return false
+      } else if (!('children' in this.childNodes[parentId])) {
+        return false;
+      }
+      let childIds = this.childNodes[parentId].children;
+      return this.getChildnodes(childIds);
+    }
+
 
     }
 
