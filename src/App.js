@@ -23,7 +23,37 @@ class App extends Component {
 
 // update App state upon onClick event trigger
 
-    changeNode = (currNodeId, optionPick) => {
+    let decisionTree = (data) => {
+      this.initial = tree.initial;
+      this.childNodes = tree.childNodes;
+
+      this.getInitial = () => {
+        if (!this.initial) {
+          throw 'No initial choices specified'
+        } else {
+          return this.getChildNodes(this.initial)
+        }
+      }
+
+      this.getChildNode = (id) => {
+        if (!(id in this.childNodes)) {
+          return false
+        } else if (!('id' in this.childNodes[id])) {
+          this.childNodes[id].id = id
+        }
+        return this.childNodes[id];
+      }
+
+      this.getChildNodes = (idList) => {
+        if (!idList) return [];
+        let list = [];
+        for (let i = 0, ln = idList.length; i < ln; i++) {
+          let childChoice = this.getChildNode(idList[i]);
+          list.push(childChoice)
+        }
+        return list;
+      }
+
 
     }
 
@@ -72,7 +102,7 @@ class App extends Component {
 let tree = {
   question: "Are you an adult ?",
   nodeId: 1,
-  childOptions: ["Yes", "No"],
+  initial: ["Yes", "No"],
   childNodes: {
     "Yes": {
       question: "Are you speaking to a child ?",
