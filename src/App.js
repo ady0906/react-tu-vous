@@ -39,11 +39,11 @@ class App extends Component {
 
       let optionButtons;
 
-      if (this.props.node.childOptions != null) {
-        optionButtons = this.props.node.childOptions.map(function (node, index) {
-          return <button><App node={node}/></button>
-        });
-      }
+      // if (this.props.node.childOptions != null) {
+      //   optionButtons = this.props.node.childOptions.map(function (node, index) {
+      //     return <button><App node={node}/></button>
+      //   });
+      // }
 
       return (
         <div className="App">
@@ -121,7 +121,7 @@ let tree = {
                 nodeId: 8,
                 childOptions: ["Yes", "No"],
                 childNodes: {
-                  "Yes: "{
+                  "Yes": {
                     answer: "Vous",
                     nodeId: 25
                   },
@@ -140,7 +140,7 @@ let tree = {
                             nodeId: 28,
                           }
                         }
-                      }
+                      },
                       "No": {
                         question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
                         nodeId: 29,
