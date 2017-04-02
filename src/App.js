@@ -27,6 +27,7 @@ class App extends Component {
       this.initial = tree.initial;
       this.childNodes = tree.childNodes;
 
+// get array of choices for the root of the tree
       this.getInitial = () => {
         if (!this.initial) {
           throw 'No initial choices specified'
@@ -35,6 +36,7 @@ class App extends Component {
         }
       }
 
+// get full choice data by specific id
       this.getChildNode = (id) => {
         if (!(id in this.childNodes)) {
           return false
@@ -54,6 +56,7 @@ class App extends Component {
         return list;
       }
 
+// get array of choice data for parent id
     this.getChildren = (parentId) => {
       if (!(parentID in this.childNodes)) {
         return false
