@@ -93,6 +93,15 @@ class App extends Component {
 
 // get 'option' props for parent of id
 
+    this.getParentName = (id) => {
+      let parent = this.getParents(id).pop();
+      if (!parent) {
+        return false;
+      } else {
+        return parent.name;
+      }
+    }
+
 
   }
 
