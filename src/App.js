@@ -102,6 +102,18 @@ class App extends Component {
       }
     }
 
+// init to insert ids into childNodes objects
+
+    this.init = () => {
+      let idList = [];
+
+      for (let k in this.childNodes) {
+        if (idList.indexOf(k) !== -1) {
+          throw `DecisionTree: duplicate ID ${k} in options`;
+        }
+      }
+    }
+
 
   }
 
