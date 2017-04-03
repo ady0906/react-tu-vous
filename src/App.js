@@ -67,6 +67,13 @@ class App extends Component {
       return this.getChildnodes(childIds);
     }
 
+// get array of choice data for parent(s) of id
+
+    this.getParents = (id) => {
+      let parents = [];
+      let node = this.getChildNode(id);
+    }
+
 
     }
 
