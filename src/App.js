@@ -72,10 +72,29 @@ class App extends Component {
     this.getParents = (id) => {
       let parents = [];
       let node = this.getChildNode(id);
+
+      while (node.parent) {
+        node = this.getChildNode(node.parent);
+        parents.unshift(node);
+      }
+      return parents;
     }
 
+// get array of ids for parents of specific id
 
+    this.getParentIds = (id) => {
+      let parents = this.getParents(id);
+      let parentIds = [];
+      for (let i = 0, ln = parents.length; i < ln; i++) {
+        parentIds.push(parents[i].id)
+      }
+      return parentIds;
     }
+
+// get 'option' props for parent of id
+
+
+  }
 
     bleble = () => {
       console.log("bleble")
