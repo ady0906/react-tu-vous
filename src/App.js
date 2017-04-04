@@ -108,8 +108,7 @@ class App extends Component {
       let idList = [];
 
       for (let k in this.childNodes) {
-        if (idList.indexOf(k) !== -1) {
-          throw `DecisionTree: duplicate ID ${k} in options`;
+        if (idList.indexOf(k) !== -1) throw `DecisionTree: duplicate ID ${k} in options`;
 
           let choice = this.getChoice(k);
           choice.id = k;
@@ -121,17 +120,14 @@ class App extends Component {
             if (child.parent) throw `DecisionTree: tried to assign parent ${k} to child ${choice.children[i]} which already has parent ${child.parent}`;
             child.parent = k;
           }
-          
         }
+        console.log('init', this.inital, this.childNodes);
       }
+      this.init();
     }
 
 
   }
-
-    bleble = () => {
-      console.log("bleble")
-    };
 
 
     render() {
