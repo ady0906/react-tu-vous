@@ -184,18 +184,44 @@ class App extends Component {
   // decision tree object to go down as questionaire being answered
 
 let tree = {
-  question: "Are you an adult ?",
-  nodeId: 1,
-  initial: ["Yes", "No"],
-  childNodes: {
-    "Yes": {
-      question: "Are you speaking to a child ?",
-      nodeId: 2,
-      childOptions: ["Yes", "No"],
-      childNodes: {
+  initial: ["adult", "not-adult"],
+  choices: {
+
+    // first level
+
+    "adult": {
+      name: "I am an adult",
+      children: ["adult-speaking-to-child", "adult-speaking-to-adult"],
+    },
+
+      "adult-speaking-to-child": {
+        name: "speaking to a child",
+        children: ["prince", "not-prince"]
+      },
+
+        "prince": {
+          name: "this kid is royalty",
+          answer: "Vous"
+        },
+
+        "not-prince": {
+          name: "just a regular kid",
+          answer: "Tu"
+        },
+
+      "adult-speaking-to-adult": {
+        name: "speaking to an adult",
+        children: []
+      }
+
+
+
+
+
+
+
         "Yes": {
           question: "Is the child a prince or something ?",
-          nodeId: 3,
           childNodes: {
             "No": {
               answer: "Tu"
@@ -207,7 +233,6 @@ let tree = {
           },
     "No": {
       question: "You are speaking to ...",
-      nodeId: 4,
       childOptions: [
         "A friend or lover",
         "Someone you don't formally know",
@@ -218,68 +243,54 @@ let tree = {
       ],
       childNodes: {
         "A friend or lover": {
-          answer: "Tu",
-          nodeId: 5,
+          answer: "Tu"
         },
         "Someone you don't formally know": {
           question: "God ?",
-          nodeId: 6,
           childOptions: ["Yes", "No"],
             childNodes: {
               "Yes": {
-                answer: "Tu (believe it or not)",
-                nodeId: 7
+                answer: "Tu (believe it or not)"
               },
               "No": {
                 question: "Is this someone considerably older (say, a half generation or more) than you ?",
-                nodeId: 8,
                 childOptions: ["Yes", "No"],
                 childNodes: {
                   "Yes": {
-                    answer: "Vous",
-                    nodeId: 25
+                    answer: "Vous"
                   },
                   "No": {
                     question: "Did you participate in the French 'Mai 68' riots demanding government reform and free love ?",
-                    nodeId: 26,
                     childOptions: ["Yes", "No"],
                     childNodes: {
                       "Yes": {
                         question: "Come on, really ?",
-                        nodeId: 27,
                         childOptions: ["Swear to god"],
                         childNodes: {
                           "Swear to God": {
-                            answer: "Tu",
-                            nodeId: 28,
+                            answer: "Tu"
                           }
                         }
                       },
                       "No": {
                         question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
-                        nodeId: 29,
                         childOptions: ["Yes", "No", "Not sure"],
                         childNodes: {
                           "Yes": {
-                            answer: "Tu",
-                            nodeId: 30
+                            answer: "Tu"
                           },
                           "No": {
-                            answer: "Vous",
-                            nodeId: 31
+                            answer: "Vous"
                           },
                           "Not sure": {
                             question: "Do you feel lucky ?",
-                            nodeId: 32,
                             childOptions: ["Yes", "No"],
                             childNodes: {
                               "Yes": {
-                                answer: "Tu",
-                                nodeId: 33
+                                answer: "Tu"
                               },
                               "No": {
-                                answer: "Vous",
-                                nodeId: 34
+                                answer: "Vous"
                               }
                             }
                           }
@@ -294,44 +305,35 @@ let tree = {
         },
         "Your spouse": {
           question: "Are you and your spouse aristocrats ?",
-          nodeId: 9,
           childOptions: ["Yes", "No"],
           childNodes: {
             "No": {
-              answer: "Tu",
-              nodeId: 10
+              answer: "Tu"
             },
             "Yes": {
-              answer: "Vous",
-              nodeId: 11
+              answer: "Vous"
             }
           }
         },
         "Your father-in-law": {
-          answer: "Best to ask",
-          nodeId: 16
+          answer: "Best to ask"
         },
         "Your boss": {
           question: "Is your company laid back ?",
           childOptions : ["Yes", "No"],
-          nodeId: 17,
           childNodes: {
             "Yes": {
-              answer: "Tu",
-              nodeId: 18
+              answer: "Tu"
             },
             "No": {
               question: "Usually a 'vous' situation ... Unless this is a showdown",
-              nodeId: 19,
               childOptions: ["Yes", "No"],
               childNodes: {
                 "Yes": {
-                  answer: "Tu",
-                  nodeId: 20
+                  answer: "Tu"
                 },
                 "No": {
-                  answer: "Vous",
-                  nodeId: 21
+                  answer: "Vous"
                 }
               }
             }
@@ -340,15 +342,12 @@ let tree = {
         "Your teacher": {
           question: "Is your teacher young enough to be your daughter or son ?",
           childOptions: ["Yes", "No"],
-          nodeId: 22,
           childNodes: {
             "Yes": {
-              answer: "Tu",
-              nodeId: 23
+              answer: "Tu"
             },
             "No": {
-              answer: "Vous",
-              nodeId: 24
+              answer: "Vous"
             }
           }
         }
@@ -358,21 +357,17 @@ let tree = {
   },
   "No": {
     question: "Are you speaking to an adult ?",
-    nodeId: 12,
     childOptions: ["Yes", "No"],
     childNodes: {
       "Yes": {
         question: "Is the adult a family member ?",
-        nodeId: 13,
         childOptions: ["Yes", "No"],
         childNodes: {
           "Yes": {
-            answer: "Tu",
-            nodeId: 14
+            answer: "Tu"
           },
           "No": {
-            answer: "Vous",
-            nodeId: 15
+            answer: "Vous"
           }
         }
       },
