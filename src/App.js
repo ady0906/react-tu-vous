@@ -126,6 +126,22 @@ class App extends Component {
       this.init();
     }
 
+    $(() => {
+      let tree = new DecisionTree(tree);
+      let $list = $('#choices');
+      let $title = $('h1');
+
+      let current_id = null;
+      let renderList = (items) => {
+        let title = tree.getParentName(items[0].id);
+        if (title) {
+          $title.text(title);
+        } else {
+          $title.text('Are you an adult ?')
+        }
+      }
+    })
+
 // create buttons based on childNodes
   }
 
