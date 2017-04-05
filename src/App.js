@@ -211,8 +211,17 @@ let tree = {
 
       "adult-speaking-to-adult": {
         name: "speaking to an adult",
-        children: []
-      }
+        children: ["friend-lover", "dont-formally-know", "spouse", "father-in-law", "boss", "teacher"]
+      },
+
+        "friend-lover": {
+          name: "a friend or lover",
+          answer: "Tu"
+        },
+
+        "dont-formally-know": {
+          
+        }
 
 
 
