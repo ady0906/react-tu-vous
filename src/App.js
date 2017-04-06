@@ -220,8 +220,11 @@ let tree = {
         },
 
         "dont-formally-know": {
-          
-        }
+          name: "someone you don't formally know",
+          children: ["someone-considerably-older", "about-same-age-or-younger"]
+        },
+
+        
 
 
 
