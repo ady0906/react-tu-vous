@@ -220,7 +220,7 @@ let tree = {
         },
 
         "dont-formally-know": {
-          name: "someone you don't formally know",
+          name: "someone I don't formally know",
           children: ["someone-considerably-older", "about-same-age-or-younger"]
         },
 
@@ -235,24 +235,44 @@ let tree = {
           }
 
         "spouse": {
-          name: "your spouse",
+          name: "my spouse",
           children: ["you-are-aristocrats", "just-regular-folks"]
         },
 
         "father-in-law": {
-          name: "your father in law",
+          name: "my father in law",
           answer: "Best to ask"
         },
 
         "boss": {
-          name: "your boss",
+          name: "my boss",
           children: ["laidback-company", "stern-office"]
         },
 
+          "laidback-company": {
+            name: "I work in a laid back environment",
+            answer: "Tu"
+          },
+
+          "stern-office": {
+            name: "I work somewhere stern",
+            children: [""]
+          }
+
         "teacher": {
-          name: "your teacher",
+          name: "my teacher",
           children: ["older-teacher", "younger-teacher"]
-        }
+        },
+
+          "older-teacher": {
+            name: "older teacher",
+            answer: "Vous"
+          },
+
+          "younger-teacher": {
+            name: "younger teacher",
+            answer: "Tu"
+          }
 
 
 
