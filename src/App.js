@@ -224,7 +224,22 @@ let tree = {
           children: ["someone-considerably-older", "about-same-age-or-younger"]
         },
 
-        
+        "spouse": {
+          name: "your spouse",
+          children: ["you-are-aristocrats", "just-regular-folks"]
+        },
+
+        "father-in-law": {
+          name: "your father in law",
+          answer: "Best to ask"
+        },
+
+        "boss": {
+          name: "your boss",
+          children: ["laidback-company", "stern-office"]
+        }
+
+
 
 
 
