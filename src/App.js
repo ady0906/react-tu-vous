@@ -231,13 +231,23 @@ let tree = {
 
           "about-same-age-or-younger": {
             name: "about the same age or younger",
-            children: []
+            children: ["i-am-hip", "i-am-conservative"]
           }
 
         "spouse": {
           name: "my spouse",
           children: ["you-are-aristocrats", "just-regular-folks"]
         },
+
+          "you-are-aristocrats": {
+            name: "my spouse and I are aristocrats",
+            answer: "Vous"
+          },
+
+          "just-regular-folks": {
+            name: "we are just regular folks",
+            answer: "Tu"
+          },
 
         "father-in-law": {
           name: "my father in law",
@@ -256,8 +266,18 @@ let tree = {
 
           "stern-office": {
             name: "I work somewhere stern",
-            children: [""]
-          }
+            children: ["confronting-boss", "all-is-good"]
+          },
+
+            "confronting-boss": {
+              name: "I am having a showdown with my boss",
+              answer: "Tu"
+            },
+
+            "all-is-good": {
+              name: "just a regular day",
+              answer: "Vous"
+            },
 
         "teacher": {
           name: "my teacher",
@@ -272,7 +292,7 @@ let tree = {
           "younger-teacher": {
             name: "younger teacher",
             answer: "Tu"
-          }
+          },
 
 
 
