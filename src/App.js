@@ -232,7 +232,17 @@ let tree = {
           "about-same-age-or-younger": {
             name: "about the same age or younger",
             children: ["i-am-hip", "i-am-conservative"]
-          }
+          },
+
+            "i-am-hip": {
+              name: "",
+              answer: "Tu"
+            },
+
+            "i-am-conservative": {
+              name: "",
+              children: []
+            },
 
         "spouse": {
           name: "my spouse",
