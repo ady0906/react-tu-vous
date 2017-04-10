@@ -241,8 +241,27 @@ let tree = {
 
             "i-am-conservative": {
               name: "",
-              children: []
+              children: ["talking-to-peer", "talking-to-superior", "not-sure"]
             },
+
+              "talking-to-peer": {
+                name: "I am addressing a peer",
+                answer: "Tu"
+              },
+
+              "talking-to-superior": {
+                name: "I am addressing a superior",
+                answer: "Vous"
+              },
+
+              "not-sure": {
+                name: "I am not sure",
+                children: ["feeling-lucky", "feeling-cautious"]
+              }
+
+                "feeling-lucky": {
+                  name: "I am feeling lucky",
+                }
 
         "spouse": {
           name: "my spouse",
