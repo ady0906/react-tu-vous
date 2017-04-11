@@ -235,12 +235,12 @@ let tree = {
           },
 
             "i-am-hip": {
-              name: "",
+              name: "I am cool like that",
               answer: "Tu"
             },
 
             "i-am-conservative": {
-              name: "",
+              name: "I am conservative",
               children: ["talking-to-peer", "talking-to-superior", "not-sure"]
             },
 
@@ -261,7 +261,14 @@ let tree = {
 
                 "feeling-lucky": {
                   name: "I am feeling lucky",
+                  answer: "Tu"
+                },
+
+                "feeling-cautious": {
+                  name: "I am feeling cautious",
+                  answer: "Vous"
                 }
+
 
         "spouse": {
           name: "my spouse",
@@ -321,173 +328,10 @@ let tree = {
           "younger-teacher": {
             name: "younger teacher",
             answer: "Tu"
-          },
-
-
-
-
-
-
-
-
-
-        "Yes": {
-          question: "Is the child a prince or something ?",
-          childNodes: {
-            "No": {
-              answer: "Tu"
-              },
-            "Yes": {
-              answer: "Vous"
-              }
-            }
-          },
-    "No": {
-      question: "You are speaking to ...",
-      childOptions: [
-        "A friend or lover",
-        "Someone you don't formally know",
-        "Your spouse",
-        "Your father-in-law",
-        "Your boss",
-        "Your teacher"
-      ],
-      childNodes: {
-        "A friend or lover": {
-          answer: "Tu"
-        },
-        "Someone you don't formally know": {
-          question: "God ?",
-          childOptions: ["Yes", "No"],
-            childNodes: {
-              "Yes": {
-                answer: "Tu (believe it or not)"
-              },
-              "No": {
-                question: "Is this someone considerably older (say, a half generation or more) than you ?",
-                childOptions: ["Yes", "No"],
-                childNodes: {
-                  "Yes": {
-                    answer: "Vous"
-                  },
-                  "No": {
-                    question: "Did you participate in the French 'Mai 68' riots demanding government reform and free love ?",
-                    childOptions: ["Yes", "No"],
-                    childNodes: {
-                      "Yes": {
-                        question: "Come on, really ?",
-                        childOptions: ["Swear to god"],
-                        childNodes: {
-                          "Swear to God": {
-                            answer: "Tu"
-                          }
-                        }
-                      },
-                      "No": {
-                        question: "Do you consider this person a peer, that is, a fellow student, the coworker in the next cubicle, an Internet chat room acquaintance or someone you met in a bar last night and just woke up next to ?",
-                        childOptions: ["Yes", "No", "Not sure"],
-                        childNodes: {
-                          "Yes": {
-                            answer: "Tu"
-                          },
-                          "No": {
-                            answer: "Vous"
-                          },
-                          "Not sure": {
-                            question: "Do you feel lucky ?",
-                            childOptions: ["Yes", "No"],
-                            childNodes: {
-                              "Yes": {
-                                answer: "Tu"
-                              },
-                              "No": {
-                                answer: "Vous"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
           }
-        },
-        "Your spouse": {
-          question: "Are you and your spouse aristocrats ?",
-          childOptions: ["Yes", "No"],
-          childNodes: {
-            "No": {
-              answer: "Tu"
-            },
-            "Yes": {
-              answer: "Vous"
-            }
-          }
-        },
-        "Your father-in-law": {
-          answer: "Best to ask"
-        },
-        "Your boss": {
-          question: "Is your company laid back ?",
-          childOptions : ["Yes", "No"],
-          childNodes: {
-            "Yes": {
-              answer: "Tu"
-            },
-            "No": {
-              question: "Usually a 'vous' situation ... Unless this is a showdown",
-              childOptions: ["Yes", "No"],
-              childNodes: {
-                "Yes": {
-                  answer: "Tu"
-                },
-                "No": {
-                  answer: "Vous"
-                }
-              }
-            }
-          }
-        },
-        "Your teacher": {
-          question: "Is your teacher young enough to be your daughter or son ?",
-          childOptions: ["Yes", "No"],
-          childNodes: {
-            "Yes": {
-              answer: "Tu"
-            },
-            "No": {
-              answer: "Vous"
-            }
-          }
+
         }
       }
-    }
-  }
-  },
-  "No": {
-    question: "Are you speaking to an adult ?",
-    childOptions: ["Yes", "No"],
-    childNodes: {
-      "Yes": {
-        question: "Is the adult a family member ?",
-        childOptions: ["Yes", "No"],
-        childNodes: {
-          "Yes": {
-            answer: "Tu"
-          },
-          "No": {
-            answer: "Vous"
-          }
-        }
-      },
-      "No": {
-        answer: "Tu"
-      }
-    }
-  }
-}
-
+        
 
 export default App;
