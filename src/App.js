@@ -23,7 +23,7 @@ class App extends Component {
 
 // update App state upon onClick event trigger
 
-    let decisionTree = (data) => {
+    let decisionTree = (tree) => {
       this.initial = tree.initial;
       this.childNodes = tree.childNodes;
 
@@ -169,13 +169,10 @@ class App extends Component {
             A simple app to help you figure out which second person French pronoun you should be using
           </p>
           <section>
-
-            <h4>Are you an adult ? </h4>
-            <button>Yes</button>
-            &nbsp;
-            <button>No</button>
-
-        </section>
+            <h4></h4>
+            <div id="choices"></div>
+            <button id="back">Back</button>
+          </section>
         </div>
       );
     }
@@ -185,7 +182,7 @@ class App extends Component {
 
 let tree = {
   initial: ["adult", "not-adult"],
-  choices: {
+  childNodes: {
 
     // first level
 
@@ -332,6 +329,6 @@ let tree = {
 
         }
       }
-        
+
 
 export default App;
